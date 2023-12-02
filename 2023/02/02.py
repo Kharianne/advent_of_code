@@ -42,7 +42,8 @@ def compare(rules: dict, path: str) -> int:
     print("Game sum", game_sum)
     greater_sum = 0
     for _, values in games.items():
-        greater_sum += values.values()
+        a, b, c = values.values()
+        greater_sum += a * b * c
     print("Greater sum", greater_sum)
     return game_sum
 

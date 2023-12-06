@@ -9,7 +9,7 @@ map_numbers = {
     "six": 6,
     "seven": 7,
     "eight": 8,
-    "nine": 9
+    "nine": 9,
 }
 
 
@@ -22,14 +22,13 @@ def get_values(calibration_line: str) -> int:
         except ValueError:
             continue
     if len(number) > 2:
-        return int(''.join([number[0], number[-1]]))
+        return int("".join([number[0], number[-1]]))
     else:
         return 0
 
 
 def get_corrected_values(line: str) -> int:
-    positions = {
-    }
+    positions = {}
     for key, value in map_numbers.items():
         occurrences = [m.start() for m in re.finditer(key, line)]
         for occurrence in occurrences:
@@ -42,7 +41,7 @@ def get_corrected_values(line: str) -> int:
             continue
 
     s = sorted(positions.items())
-    return int(''.join([s[0][1], s[-1][1]]))
+    return int("".join([s[0][1], s[-1][1]]))
 
 
 def read_input(path: str) -> list:

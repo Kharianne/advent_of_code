@@ -7,9 +7,10 @@ def parse_input(path: str) -> dict:
             grabs = result.split(";")
             games[number] = {}
             for grab in grabs:
-                color_tuples = [(pair.strip().split(" ")[1],
-                                 int(pair.strip().split(" ")[0])) for pair in
-                                grab.strip().split(",")]
+                color_tuples = [
+                    (pair.strip().split(" ")[1], int(pair.strip().split(" ")[0]))
+                    for pair in grab.strip().split(",")
+                ]
                 if not games[number]:
                     games[number].update(dict(color_tuples))
                 else:
@@ -47,10 +48,7 @@ def compare(rules: dict, path: str) -> int:
     print("Greater sum", greater_sum)
     return game_sum
 
-rules = {
-    "red": 12,
-    "green": 13,
-    "blue": 14
-}
+
+rules = {"red": 12, "green": 13, "blue": 14}
 compare(rules, "test_input.txt")
 compare(rules, "input.txt")

@@ -72,14 +72,14 @@ def parse_input(path: str) -> list:
         print("Y", y)
         print("CHAR:", part_list[x][y])
         add_to_sum = []
-        add_to_sum.append(validation(part_list, [x-1, y-1]))
-        add_to_sum.append(validation(part_list, [x-1, y+1]))
-        add_to_sum.append(validation(part_list, [x-1, y]))
-        add_to_sum.append(validation(part_list, [x, y-1]))
-        add_to_sum.append(validation(part_list, [x, y+1]))
-        add_to_sum.append(validation(part_list, [x+1, y-1]))
-        add_to_sum.append(validation(part_list, [x+1, y+1]))
-        add_to_sum.append(validation(part_list, [x+1, y]))
+        add_to_sum.append(validation(part_list, [x - 1, y - 1]))
+        add_to_sum.append(validation(part_list, [x - 1, y + 1]))
+        add_to_sum.append(validation(part_list, [x - 1, y]))
+        add_to_sum.append(validation(part_list, [x, y - 1]))
+        add_to_sum.append(validation(part_list, [x, y + 1]))
+        add_to_sum.append(validation(part_list, [x + 1, y - 1]))
+        add_to_sum.append(validation(part_list, [x + 1, y + 1]))
+        add_to_sum.append(validation(part_list, [x + 1, y]))
 
         gear_add_to_sum = list(set(add_to_sum))
         gear_add_to_sum.remove(0)
@@ -89,14 +89,14 @@ def parse_input(path: str) -> list:
 
         print("+++++++++++++++++")
 
-
     print("SUM:", _sum)
     print("GEAR SUM", gear_sum)
+
 
 # coords
 # line above: (i-1, j-1), (i-1, j+1), (i-1, j)
 # current line: (i, j-1), (i, j+1)
 # line bellow: (i+1, j-1), (i+1, j+1), (i+1, j)
 
-#parse_input("test_input.txt")
+# parse_input("test_input.txt")
 parse_input("input.txt")
